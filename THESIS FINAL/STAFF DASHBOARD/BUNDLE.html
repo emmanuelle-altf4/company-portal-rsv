@@ -1,0 +1,85 @@
+<?php
+session_start();
+if (!isset($_SESSION['Employeenumber'])) {
+    header('Location: login.php');
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome <3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: grey;
+        }
+        table, th, td {
+  border: 1px solid black;
+}
+
+        table{
+            width: 80%;
+
+        }
+
+        H1{
+text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+<H1>VILLANUEVA RESORT</H1>
+
+<table style="width: 100%;">
+<tr>
+    <th>Price</th>
+    <th>bundle</th>
+</tr>
+<tr>
+    <th>8,500</th>
+    <th>
+<li>30 pax</li>
+<li>event place & cottage</li>
+<li>Videooke</li>
+<li>2 pools</li>
+</th>
+<tr>
+    <th>10,000</th>
+    <th>
+<li>50 pax</li>
+<li>event place & cottage</li>
+<li>Videooke</li>
+<li>2 pools</li>
+</th>
+<tr>
+    <th>12,000</th>
+    <th>
+<li>70 pax</li>
+<li>event place & cottage</li>
+<li>Videooke</li>
+<li>2 pools</li>
+<li>free Catering</li>
+</th>
+<tr>
+    <th>15,000</th>
+    <th>
+<li>-50 pax</li>
+<li>-Event place & cottage</li>
+<li>Videooke</li>
+<li>2 pools</li>
+<li>free Catering</li>
+</th>
+<tr>
+    <th>TIME</th>
+    <th><li>DAYTIME: 7:00 AM - 5:00 PM</li>
+    <li>NIGHT: 7:00pm - 5:00AM</li></th>
+</tr>
+</body>
+</html>
