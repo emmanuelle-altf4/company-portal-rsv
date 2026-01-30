@@ -1,0 +1,17 @@
+CREATE DATABASE calendar;
+USE calendar;
+
+
+CREATE TABLE reservations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    resort_name VARCHAR(100),
+    reservation_date DATE,
+    customer_name VARCHAR(100),
+    customer_email VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+ALTER TABLE reservations CHANGE COLUMN resort_name staffname VARCHAR(100);
+
+ALTER TABLE reservations ADD COLUMN reservation_time TIME AFTER reservation_date;
+
