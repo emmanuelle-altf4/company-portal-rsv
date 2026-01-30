@@ -236,8 +236,13 @@ if (!isset($_SESSION['Employeenumber'])) {
 <body>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <a class="brand" href="dashboard.php" aria-label="Dashboard">
+<<<<<<< HEAD
       <span class="logo">v</span>
       <span>Veripool</span>
+=======
+      <span class="logo">rm.v</span>
+      <span>Reservation</span>
+>>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
     </a>
 
     <div class="search" role="search" aria-label="Employee">
@@ -263,7 +268,11 @@ if (!isset($_SESSION['Employeenumber'])) {
     </div>
 
     <div class="user-area" aria-hidden="false">
+<<<<<<< HEAD
       <button class="btn" type="button" onclick="window.location.href='../Enter_role.php';">Logout</button>
+=======
+      <button class="btn" type="button" onclick="window.location.href='../Enter_role.php';">Enter Role</button>
+>>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
       <div class="avatar" title="Profile">
         <i class="fa-solid fa-user"></i>
       </div>

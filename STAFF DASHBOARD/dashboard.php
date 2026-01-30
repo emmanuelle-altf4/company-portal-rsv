@@ -222,8 +222,13 @@ if (!isset($_SESSION['Employeenumber'])) {
 <body>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <a class="brand" href="dashboard.php" aria-label="Dashboard">
+<<<<<<< HEAD
       <span class="logo">v</span>
       <span>Veripool</span>
+=======
+      <span class="logo">rm.v</span>
+      <span>Reservation</span>
+>>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
     </a>
 <!-- search bar just incase HAHHAHHAHA -->
     <!-- <div class="search" role="search" aria-label="Search">

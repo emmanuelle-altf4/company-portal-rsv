@@ -131,8 +131,13 @@ if (!isset($_SESSION['Employeenumber'])) {
 <body>
   <nav class="navbar" role="navigation" aria-label="Main">
     <a class="brand" href="dashboard.php" aria-label="Dashboard">
+<<<<<<< HEAD
       <span class="logo">v</span>
       <span>Veripool</span>
+=======
+      <span class="logo">HR</span>
+      <span>Company Portal</span>
+>>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
     </a>
 
     <div class="employee" aria-hidden="false">
@@ -147,7 +152,11 @@ if (!isset($_SESSION['Employeenumber'])) {
     </div>
 
     <div style="margin-left:12px; display:flex; gap:10px; align-items:center;">
+<<<<<<< HEAD
       <button class="btn" onclick="location.href='../Enter_role.php'">Log out</button>
+=======
+      <button class="btn" onclick="location.href='../Enter_role.php'">Enter Role</button>
+>>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
       <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#fff,#f7fbff);display:grid;place-items:center;border:1px solid rgba(15,23,42,0.04);">
         <i class="fa-solid fa-user" style="color:var(--accent)"></i>
       </div>
@@ -194,7 +203,11 @@ if (!isset($_SESSION['Employeenumber'])) {
           </div>
         </div>
 
+<<<<<<< HEAD
         <!-- <div class="calendar-card" aria-hidden="false">
+=======
+        <div class="calendar-card" aria-hidden="false">
+>>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
           <h3>Legend</h3>
           <div style="display:flex; gap:8px; margin-top:8px;">
             <div style="width:14px;height:14px;border-radius:4px;background:#f7f9fc;border:1px solid rgba(15,23,42,0.02)"></div>
@@ -203,7 +216,11 @@ if (!isset($_SESSION['Employeenumber'])) {
           <div style="display:flex; gap:8px; margin-top:8px;">
             <div style="width:14px;height:14px;border-radius:4px;background:linear-gradient(90deg,#fff0f0,#fff6f6);border:1px solid rgba(255,99,71,0.08)"></div>
             <div style="font-size:13px;color:var(--muted)">Reserved</div>
+<<<<<<< HEAD
           </div> -->
+=======
+          </div>
+>>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
         </div>
       </aside>
     </div>

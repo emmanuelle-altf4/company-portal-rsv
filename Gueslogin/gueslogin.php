@@ -143,6 +143,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <!-- para sa dark mode off ko muna
     <label class="switch">
         <input type="checkbox" id="mode-toggle">
@@ -159,6 +160,24 @@
         <div>
             <label for="password">Password:</label>
             <input type="password" name="password" required>
+=======
+    <!-- Dark Mode Switch -->
+    <label class="switch">
+        <input type="checkbox" id="mode-toggle">
+        <span class="slider"></span>
+    </label>
+
+    <h1>Log In Form</h1>
+
+    <form action="LogInAndregistrationform_process.php" method="POST">
+        <div>
+            <label for="cxname">Login</label>
+            <input type="text" id="cxname" name="cxname" required>
+        </div>
+        <div>
+            <label for="cxpass">Password:</label>
+            <input type="password" id="cxpass" name="cxpass" required>
+>>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
         </div>
         <div>
             <button type="submit">Login</button>
@@ -169,12 +188,20 @@
          Register? <a href="guessregister.php">Click Me</a>
     </p>
 
+<<<<<<< HEAD
     <!-- <script>
+=======
+    <script>
+>>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
         const toggleSwitch = document.getElementById('mode-toggle');
         toggleSwitch.addEventListener('change', () => {
             document.body.classList.toggle('dark-mode');
         });
+<<<<<<< HEAD
     </script> -->
+=======
+    </script>
+>>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
 </body>
 
 </html>
