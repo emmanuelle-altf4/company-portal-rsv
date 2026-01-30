@@ -243,9 +243,13 @@ session_start();
 <body>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <a class="brand" href="dashboard.php" aria-label="Dashboard">
-      <!-- logoandname -->
       <span class="logo">rm.v</span>
-      <span>VeriPool</span>
+      <span>Reservation</span>
+      <!-- name to kooky -->
+         <!-- <div class="cxname" aria-hidden="false">
+         <span class="name"><?php echo htmlspecialchars($_SESSION['cxname'] ?? 'cxname'); ?></span> -->
+      
+    </div>
     </a>
 <!-- search bar just incase HAHHAHHAHA -->
     <!-- <div class="search" role="search" aria-label="Search">
@@ -254,11 +258,11 @@ session_start();
     </div> -->
 
     <div class="main-nav" role="menubar" aria-label="Primary">
-      <a class="nav-item active" href="dashboard.php" role="menuitem" aria-current="page">
+      <a class="nav-item" href="Resortwebsite.php" role="menuitem" aria-current="page">
         <i class="fa-solid fa-house"></i>
         <span>Home</span>
       </a>
-      <a class="nav-item" href="aboutus.php" role="menuitem">
+      <a class="nav-item active" href="aboutus.php" role="menuitem">
         <i class="fa-solid fa-users"></i>
         <span>about us</span>
       </a>
@@ -281,8 +285,8 @@ session_start();
 	<!-- row -->
 	<div class="row-container">
   <img src="poolpic.jpg" alt="pool" class="item" onclick="window.location='Gueslogin/gueslogin.php'">
-  <img src="cottage.jpg" alt="cottage" class="item" onclick="window.location='Gueslogin/gueslogin.php'">
-  <img src="room.jpg" alt="room" class="item" onclick="window.location='Gueslogin/gueslogin.php'">
+  <img src="cottage.jpg" alt="cottage" class="item" onclick="window.location='cottageinfo.php'">
+  <img src="room.jpg" alt="room" class="item" onclick="window.location='roominfo.php'">
 </div>
 
 

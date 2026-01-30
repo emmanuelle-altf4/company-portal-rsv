@@ -1,0 +1,18 @@
+USE logindata;
+
+CREATE TABLE customerdata (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cxname VARCHAR(100),
+    cxemail VARCHAR(100) UNIQUE,
+    password VARCHAR(255) -- Store hashed passwords
+);
+
+ run mo den to 
+ 
+CREATE TABLE IF NOT EXISTS customerdata (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  cxname VARCHAR(100) NOT NULL,
+  cxemail VARCHAR(150) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

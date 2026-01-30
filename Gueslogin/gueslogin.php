@@ -143,22 +143,22 @@
 </head>
 
 <body>
-    <!-- Dark Mode Switch -->
+    <!-- para sa dark mode off ko muna
     <label class="switch">
         <input type="checkbox" id="mode-toggle">
         <span class="slider"></span>
-    </label>
+    </label> -->
 
-    <h1>Log In Form</h1>
+    <h1>Log In </h1>
 
-    <form action="LogInAndregistrationform_process.php" method="POST">
+    <form action="Gueslogin_process.php" method="POST">
         <div>
-            <label for="cxname">Login</label>
+            <label for="cxname">Enter Name:</label>
             <input type="text" id="cxname" name="cxname" required>
         </div>
         <div>
-            <label for="cxpass">Password:</label>
-            <input type="password" id="cxpass" name="cxpass" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
         </div>
         <div>
             <button type="submit">Login</button>
@@ -169,12 +169,12 @@
          Register? <a href="guessregister.php">Click Me</a>
     </p>
 
-    <script>
+    <!-- <script>
         const toggleSwitch = document.getElementById('mode-toggle');
         toggleSwitch.addEventListener('change', () => {
             document.body.classList.toggle('dark-mode');
         });
-    </script>
+    </script> -->
 </body>
 
 </html>

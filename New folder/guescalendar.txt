@@ -1,0 +1,9 @@
+
+CREATE TABLE reservations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    resort_name VARCHAR(100),
+    reservation_date DATE,
+    cxname VARCHAR(100),
+    cxemail VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
