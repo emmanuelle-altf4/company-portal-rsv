@@ -1,0 +1,7 @@
+CREATE DATABASE admin_data;
+USE admin_data;
+CREATE TABLE admins (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Adminname VARCHAR(100) NOT NULL UNIQUE,
+    Password VARCHAR(255) NOT NULL
+);
