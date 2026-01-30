@@ -243,14 +243,9 @@ session_start();
 <body>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <a class="brand" href="dashboard.php" aria-label="Dashboard">
-<<<<<<< HEAD
       <!-- logoandname -->
       <span class="logo">v</span>
       <span>VeriPool</span>
-=======
-      <span class="logo">rm.v</span>
-      <span>Reservation</span>
->>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
     </a>
 <!-- search bar just incase HAHHAHHAHA -->
     <!-- <div class="search" role="search" aria-label="Search">
@@ -260,22 +255,14 @@ session_start();
 
     <div class="main-nav" role="menubar" aria-label="Primary">
       <a class="nav-item active" href="dashboard.php" role="menuitem" aria-current="page">
-        <i class="fa-solid fa-house"></i>
-        <span>Home</span>
+        <i class="fa-solid fa-info-circle"></i>
+        <span>About us</span>
       </a>
-<<<<<<< HEAD
-      <a class="nav-item" href="aboutus.php" role="menuitem">
+      <!-- <a class="nav-item" href="aboutus.php" role="menuitem">
         <i class="fa-solid fa-users"></i>
-        <span>about us</span>
+        <span>about us</span> -->
       </a>
       <a class="nav-item" href="Gueslogin/gueslogin.php" role="menuitem">
-=======
-      <a class="nav-item" href="payment_stafff.php" role="menuitem">
-        <i class="fa-solid fa-users"></i>
-        <span>about us</span>
-      </a>
-      <a class="nav-item" href="calendar.php" role="menuitem">
->>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
         <i class="fa-solid fa-calendar-days"></i>
         <span>Reserver Now!</span>
       </a>
@@ -294,13 +281,8 @@ session_start();
 	<!-- row -->
 	<div class="row-container">
   <img src="poolpic.jpg" alt="pool" class="item" onclick="window.location='Gueslogin/gueslogin.php'">
-<<<<<<< HEAD
   <img src="cottage.jpg" alt="cottage" class="item" onclick="window.location='Gueslogin/gueslogin.php'">
   <img src="room.jpg" alt="room" class="item" onclick="window.location='Gueslogin/gueslogin.php'">
-=======
-  <img src="cottage.jpg" alt="cottage" class="item" onclick="window.location='cottageinfo.php'">
-  <img src="room.jpg" alt="room" class="item" onclick="window.location='roominfo.php'">
->>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
 </div>
 
 

@@ -262,19 +262,19 @@ session_start();
         <i class="fa-solid fa-house"></i>
         <span>Home</span>
       </a>
-      <a class="nav-item" href="guesaboutus.php" role="menuitem">
+      <!-- <a class="nav-item" href="guesaboutus.php" role="menuitem">
         <i class="fa-solid fa-users"></i>
         <span>about us</span>
-      </a>
+      </a> -->
       <a class="nav-item" href="Guesreservation.php" role="menuitem">
         <i class="fa-solid fa-calendar-days"></i>
         <span>Reserver Now!</span>
       </a>
     </div>
 
-    <div class="user-area" aria-hidden="false">
+    <!-- <div class="user-area" aria-hidden="false">
       <div class="user-badge" title="Employee">
-      </div>
+      </div> -->
     </div>
   </nav>
 <!-- for ano to ung ifram burahin monalang if dili mo gusto -->

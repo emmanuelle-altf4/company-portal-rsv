@@ -267,8 +267,8 @@ if (!$db_error) {
 
     <div class="main-nav" role="menubar" aria-label="Primary">
       <a class="nav-item" href="guessdashboard.php" role="menuitem"><i class="fa-solid fa-house"></i><span>Home</span></a>
-      <a class="nav-item active" href="guespayment.php" role="menuitem" aria-current="page"><i class="fa-solid fa-users"></i><span>Reservations</span></a>
-      <!-- <a class="nav-item" href="Guesreservation.php" role="menuitem"><i class="fa-solid fa-calendar-days"></i><span></span></a> -->
+      <!-- <a class="nav-item active" href="guespayment.php" role="menuitem" aria-current="page"><i class="fa-solid fa-users"></i><span>Reservations</span></a>
+      <a class="nav-item" href="Guesreservation.php" role="menuitem"><i class="fa-solid fa-calendar-days"></i><span></span></a> -->
     </div>
 
     <div class="user-area" aria-hidden="false">

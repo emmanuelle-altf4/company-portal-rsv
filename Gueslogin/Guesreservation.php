@@ -146,9 +146,9 @@ if (!isset($_SESSION['cxname'])) {
 
     <div style="margin-left:12px; display:flex; gap:10px; align-items:center;">
       <button class="btn" onclick="location.href='../Resortwebsite.php'">Logout</button>
-      <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#fff,#f7fbff);display:grid;place-items:center;border:1px solid rgba(15,23,42,0.04);">
+      <!-- <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#fff,#f7fbff);display:grid;place-items:center;border:1px solid rgba(15,23,42,0.04);">
         <i class="fa-solid fa-user" style="color:var(--accent)"></i>
-      </div>
+      </div> -->
     </div>
   </nav>
 
@@ -187,10 +187,10 @@ if (!isset($_SESSION['cxname'])) {
           </div>
 
           <div style="display:flex; gap:8px; margin-top:12px;">
-            <button class="btn" onclick="alert('📩 You can reach us at support@example.com or call (123) 456-7890');">
+            <button class="btn" onclick="alert('📩 You can reach us at Villanueva@gmail.com ');">
   Contact Us</button>
-            <button class="btn" style="background:linear-gradient(90deg,#10b981,#06b6d4)" onclick="location.href='guespayment.php'">Add Payment</button>
-          </div>
+            <!-- <button class="btn" style="background:linear-gradient(90deg,#10b981,#06b6d4)" onclick="location.href='guespayment.php'">Add Payment</button>
+          </div> -->
         </div>
 
         <div class="calendar-card" aria-hidden="false">
