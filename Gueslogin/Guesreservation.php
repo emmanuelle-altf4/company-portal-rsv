@@ -218,11 +218,12 @@ if (!empty($_SESSION['reservation_errors'])) {
     <div class="modal-content">
       <h3 id="modal-title">Make a Reservation</h3>
       <form action="guesscalendar_process.php" method="POST">
-  <label>Staff name: <input name="staffname" value="Test Staff"></label><br>
+  <label>Email: <input name="staffname" value="Costumer Email"></label><br>
   <label>Customer name: <input name="customer_name" value="Test Customer"></label><br>
   <label>Time: <input type="time" name="reservation_time" value="12:00"></label><br>
   <label>Date: <input type="date" name="reservation_date" value="2026-02-01"></label><br>
   <label>Room: <select name="room_type"><option>Deluxe</option></select></label><br>
+   <label>Cottage: <select name="cottage_type"><option>Bahay kubo</option><option>Modern</option></select></label><br>
   <button type="submit">Submit</button>
 </form>
 
