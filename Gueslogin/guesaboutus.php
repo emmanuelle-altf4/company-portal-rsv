@@ -243,8 +243,8 @@ session_start();
 <body>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <a class="brand" href="dashboard.php" aria-label="Dashboard">
-      <span class="logo">v</span>
-      <span>Veripool</span>
+      <span class="logo">rm.v</span>
+      <span>Reservation</span>
       <!-- name to kooky -->
          <div class="cxname" aria-hidden="false">
          <span class="name"><?php echo htmlspecialchars($_SESSION['cxname'] ?? 'cxname'); ?></span>

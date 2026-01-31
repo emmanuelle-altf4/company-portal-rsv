@@ -169,12 +169,12 @@
          Register? <a href="guessregister.php">Click Me</a>
     </p>
 
-    <script>
+    <!-- <script>
         const toggleSwitch = document.getElementById('mode-toggle');
         toggleSwitch.addEventListener('change', () => {
             document.body.classList.toggle('dark-mode');
         });
-    </script>
+    </script> -->
 </body>
 
 </html>

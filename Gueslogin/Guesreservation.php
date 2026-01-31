@@ -1,10 +1,22 @@
 <?php
 session_start();
-if (!isset($_SESSION['cxname'])) {
-    header('Location: gueslogin.php');
-    exit();
+
+// binura ko ung process kagabi
+
+if (!empty($_SESSION['reservation_success'])) {
+  echo '<div class="notice success">' . htmlspecialchars($_SESSION['reservation_success']) . '</div>';
+  unset($_SESSION['reservation_success']);
+}
+if (!empty($_SESSION['reservation_errors'])) {
+  echo '<div class="notice error"><ul>';
+  foreach ($_SESSION['reservation_errors'] as $err) {
+    echo '<li>' . htmlspecialchars($err) . '</li>';
+  }
+  echo '</ul></div>';
+  unset($_SESSION['reservation_errors']);
 }
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -128,6 +140,7 @@ if (!isset($_SESSION['cxname'])) {
     }
   </style>
 </head>
+
 <body>
   <nav class="navbar" role="navigation" aria-label="Main">
     <a class="brand" href="dashboard.php" aria-label="Dashboard">
@@ -136,7 +149,7 @@ if (!isset($_SESSION['cxname'])) {
     </a>
 
     <div class="employee" aria-hidden="false">
-      <span class="name"><?php echo htmlspecialchars($_SESSION['cxname'] ?? 'cxname'); ?></span>    
+      <span class="name"><?php echo htmlspecialchars($_SESSION['cxname'] ?? 'cxname'); ?></span>
     </div>
 
     <div class="main-nav" role="menubar" aria-label="Primary">
@@ -187,75 +200,68 @@ if (!isset($_SESSION['cxname'])) {
           </div>
 
           <div style="display:flex; gap:8px; margin-top:12px;">
-            <button class="btn" onclick="alert('📩 You can reach us at Villanueva@gmail.com ');">
+            <button class="btn" onclick="alert('📩 You can reach us at support@example.com or call (123) 456-7890');">
   Contact Us</button>
             <!-- <button class="btn" style="background:linear-gradient(90deg,#10b981,#06b6d4)" onclick="location.href='guespayment.php'">Add Payment</button>
           </div> -->
         </div>
 
         <div class="calendar-card" aria-hidden="false">
-          <!-- <h3>Legend</h3>
-          <div style="display:flex; gap:8px; margin-top:8px;">
-            <div style="width:14px;height:14px;border-radius:4px;background:#f7f9fc;border:1px solid rgba(15,23,42,0.02)"></div>
-            <div style="font-size:13px;color:var(--muted)">Available</div>
-          </div>
-          <div style="display:flex; gap:8px; margin-top:8px;">
-            <div style="width:14px;height:14px;border-radius:4px;background:linear-gradient(90deg,#fff0f0,#fff6f6);border:1px solid rgba(255,99,71,0.08)"></div>
-            <div style="font-size:13px;color:var(--muted)">Reserved</div> -->
-          </div>
+          
         </div>
       </aside>
     </div>
   </main>
 
-  <!-- Modal -->
-  <div id="reservation-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
+
+  <div id="reservation-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
     <div class="modal-content">
       <h3 id="modal-title">Make a Reservation</h3>
-      <form id="reservation-form" action="guesscalendar_process.php" method="POST">
-        <input type="hidden" name="reservation_date" id="reservation-date" />
-        <div class="form-row">
-          <label for="staffname">Employee Name</label>
-          <input id="staffname" name="staffname" type="text" required />
-        </div>
-        <div class="form-row">
-          <label for="customer_name">Customer Name</label>
-          <input id="customer_name" name="customer_name" type="text" required />
-        </div>
-        <div class="form-row">
-          <label for="reservation_time">Reservation Time</label>
-          <input id="reservation_time" name="reservation_time" type="time" required />
-        </div>
-        <div class="form-row">
-          <label for="reservation_date">Reservation date</label>
-          <input id="reservation_date" name="reservation_date" type="date" required />
-        </div>
-        <div class="form-row">
-          <label for="room_type">Room Type</label>
-          <select id="room_type" name="room_type" required>
-            <option value="Deluxe">Deluxe</option>
-            <option value="Suite">Suite</option>
-          </select>
-        </div>
+      <form action="guesscalendar_process.php" method="POST">
+  <label>Staff name: <input name="staffname" value="Test Staff"></label><br>
+  <label>Customer name: <input name="customer_name" value="Test Customer"></label><br>
+  <label>Time: <input type="time" name="reservation_time" value="12:00"></label><br>
+  <label>Date: <input type="date" name="reservation_date" value="2026-02-01"></label><br>
+  <label>Room: <select name="room_type"><option>Deluxe</option></select></label><br>
+  <button type="submit">Submit</button>
+</form>
 
-        <div class="modal-actions">
-          <button type="button" class="btn" id="cancel-btn">Cancel</button>
-          <button type="submit" class="btn">Confirm</button>
-        </div>
-      </form>
     </div>
   </div>
 
+  <?php
+  
+  $reservedDates = [];
+  $mysqli = new mysqli('localhost','root','','calendar');
+  if (!$mysqli->connect_errno) {
+      $res = $mysqli->query("SELECT DISTINCT reservation_date FROM reservations WHERE reservation_date IS NOT NULL");
+      if ($res) {
+          while ($r = $res->fetch_assoc()) {
+              $reservedDates[] = $r['reservation_date'];
+          }
+          $res->free();
+      }
+      $mysqli->close();
+  }
+  ?>
+
   <script>
+    
+    const reservedDates = <?php echo json_encode($reservedDates, JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT); ?>;
+
+    // Element references
     const monthTitle = document.getElementById('calendar-heading');
     const daysContainer = document.getElementById('calendar-days');
     const modal = document.getElementById('reservation-modal');
-    const reservationDateInput = document.getElementById('reservation-date');
+
+    
+    const reservationDateHidden = document.getElementById('reservation-date');  
+    const reservationDateVisible = document.getElementById('reservation_date'); 
     const reservationForm = document.getElementById('reservation-form');
     const cancelBtn = document.getElementById('cancel-btn');
 
     let currentDate = new Date();
-    let reservedDates = []; // store ng date as a sting  ung yyyy mm at DD
+   
 
     function renderCalendar() {
       const month = currentDate.getMonth();
@@ -266,7 +272,6 @@ if (!isset($_SESSION['cxname'])) {
       const firstDayIndex = new Date(year, month, 1).getDay();
       const totalDays = new Date(year, month + 1, 0).getDate();
 
-      
       for (let i = 0; i < firstDayIndex; i++) {
         const empty = document.createElement('div');
         empty.className = 'day empty';
@@ -288,7 +293,6 @@ if (!isset($_SESSION['cxname'])) {
         num.textContent = d;
         cell.appendChild(num);
 
-        
         const note = document.createElement('div');
         note.style.fontSize = '12px';
         note.style.color = isReserved ? '#b91c1c' : 'var(--muted)';
@@ -303,46 +307,70 @@ if (!isset($_SESSION['cxname'])) {
     }
 
     function openModal(dateStr) {
-      reservationDateInput.value = dateStr;
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden','false');
-      // para sa first input  accessibility ata nakalimutan kona 
-      document.getElementById('staffname').focus();
+      // 4checking value
+      if (reservationDateHidden) reservationDateHidden.value = dateStr;
+      if (reservationDateVisible) reservationDateVisible.value = dateStr;
+
+      if (modal) {
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden','false');
+      }
+      const first = document.getElementById('staffname');
+      if (first) first.focus();
     }
 
     function closeModal() {
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden','true');
-      reservationForm.reset();
+      if (modal) {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden','true');
+      }
+      if (reservationForm) reservationForm.reset();
     }
 
-    reservationForm.addEventListener('submit', (e) => {
-      
-      // prevent default only if you want to handle via AJAX. Here we update UI then allow submit.
-      const date = reservationDateInput.value;
-      if (!reservedDates.includes(date)) {
-        reservedDates.push(date);
-      }
-      
-      // closemodal para sa ux
-      closeModal();
-    });
+    // input in snxy tama ba spell
+    if (reservationDateVisible && reservationDateHidden) {
+      reservationDateVisible.addEventListener('change', () => {
+        reservationDateHidden.value = reservationDateVisible.value;
+      });
+    }
 
-    cancelBtn.addEventListener('click', closeModal);
-    document.getElementById('prev-month').addEventListener('click', () => {
-      currentDate.setMonth(currentDate.getMonth() - 1);
-      renderCalendar();
-    });
-    document.getElementById('next-month').addEventListener('click', () => {
-      currentDate.setMonth(currentDate.getMonth() + 1);
-      renderCalendar();
-    });
+   
+    if (reservationForm) {
+      reservationForm.addEventListener('submit', (e) => {
+        
+        if (reservationDateVisible && reservationDateHidden) {
+          reservationDateHidden.value = reservationDateVisible.value || reservationDateHidden.value;
+        }
 
-    // close modal on outside click or Escape
-    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        const date = reservationDateHidden ? reservationDateHidden.value : '';
+        if (date && !reservedDates.includes(date)) {
+          
+          reservedDates.push(date);
+        }
+
+        // ux
+        closeModal();
+      });
+    }
+
+    if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+
+    const prevBtn = document.getElementById('prev-month');
+    const nextBtn = document.getElementById('next-month');
+    if (prevBtn) prevBtn.addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() - 1); renderCalendar(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() + 1); renderCalendar(); });
+
+    // escape to
+    if (modal) {
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    }
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
+    // initial render
     renderCalendar();
   </script>
 </body>
+
+</html>
+
 </html>

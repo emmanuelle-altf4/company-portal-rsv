@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         header("Location: ADMIN/adminlogin.php");
         exit();
     } elseif ($role === 'staff') {
-        header("Location: login.php");
+        header("Location: LoginAndregistrationform.php");
         exit();
     } elseif ($role === 'New Staff') {
         header("Location: registrationform.php");
@@ -174,7 +174,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
   <main class="card" role="main" aria-labelledby="role-heading">
     <div class="header">
-      <div class="logo" aria-hidden="true">HR</div>
+      <div class="logo" aria-hidden="true">v</div>
       <div>
         <h1 id="role-heading">Select your role</h1>
         <p class="lead">Choose how you want to sign in. This helps route you to the correct area.</p>

@@ -22,12 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "Payment added successfully!";
 }
 
-<<<<<<< HEAD
-$reservations = $conn->query("SELECT id FROM reservations")->fetchAll();?>
-=======
 $reservations = $conn->query("SELECT id FROM reservations")->fetchAll();
 ?>
->>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
 
 <!DOCTYPE html>
 <html lang="en">

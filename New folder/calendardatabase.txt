@@ -15,3 +15,5 @@ ALTER TABLE reservations CHANGE COLUMN resort_name staffname VARCHAR(100);
 
 ALTER TABLE reservations ADD COLUMN reservation_time TIME AFTER reservation_date;
 
+
+ALTER TABLE reservations MODIFY reservation_date DATE NULL;

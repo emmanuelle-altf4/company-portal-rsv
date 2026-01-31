@@ -254,22 +254,22 @@ session_start();
     </div> -->
 
     <div class="main-nav" role="menubar" aria-label="Primary">
-      <a class="nav-item active" href="dashboard.php" role="menuitem" aria-current="page">
+      <a class="nav-item active" href="#" role="menuitem" aria-current="page">
         <i class="fa-solid fa-info-circle"></i>
-        <span>About us</span>
+        <span>About Us</span>
       </a>
       <!-- <a class="nav-item" href="aboutus.php" role="menuitem">
         <i class="fa-solid fa-users"></i>
-        <span>about us</span> -->
-      </a>
+        <span>about us</span>
+      </a> -->
       <a class="nav-item" href="Gueslogin/gueslogin.php" role="menuitem">
         <i class="fa-solid fa-calendar-days"></i>
         <span>Reserver Now!</span>
       </a>
     </div>
 
-    <div class="user-area" aria-hidden="false">
-      <div class="user-badge" title="Employee">
+    <!-- <div class="user-area" aria-hidden="false">
+      <div class="user-badge" title="Employee"> -->
       </div>
     </div>
   </nav>

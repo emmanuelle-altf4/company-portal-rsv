@@ -272,9 +272,9 @@ session_start();
       </a>
     </div>
 
-    <!-- <div class="user-area" aria-hidden="false">
+    <div class="user-area" aria-hidden="false">
       <div class="user-badge" title="Employee">
-      </div> -->
+      </div>
     </div>
   </nav>
 <!-- for ano to ung ifram burahin monalang if dili mo gusto -->

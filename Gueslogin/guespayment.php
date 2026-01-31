@@ -130,7 +130,7 @@ if (!$db_error) {
   body {
     margin: 0;
     min-height: 100vh;
-    background: linear-gradient(180deg,#071029 0%, #ffffff 100%);
+    background: linear-gradient(180deg,#071029 0%, #071827 100%);
     color: #e6eef8;
     -webkit-font-smoothing:antialiased;
     display: flex;
@@ -254,8 +254,8 @@ if (!$db_error) {
 <body>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <a class="brand" href="guespayment.php" aria-label="Dashboard">
-      <span class="logo">v</span>
-      <span class="title">Veripool</span>
+      <span class="logo">rm.v</span>
+      <span class="title">Reservation</span>
     </a>
 
     <div class="search" role="search" aria-label="Employee">
@@ -267,8 +267,8 @@ if (!$db_error) {
 
     <div class="main-nav" role="menubar" aria-label="Primary">
       <a class="nav-item" href="guessdashboard.php" role="menuitem"><i class="fa-solid fa-house"></i><span>Home</span></a>
-      <!-- <a class="nav-item active" href="guespayment.php" role="menuitem" aria-current="page"><i class="fa-solid fa-users"></i><span>Reservations</span></a>
-      <a class="nav-item" href="Guesreservation.php" role="menuitem"><i class="fa-solid fa-calendar-days"></i><span></span></a> -->
+      <a class="nav-item active" href="guespayment.php" role="menuitem" aria-current="page"><i class="fa-solid fa-users"></i><span>Reservations</span></a>
+      <a class="nav-item" href="calendar.php" role="menuitem"><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a>
     </div>
 
     <div class="user-area" aria-hidden="false">
@@ -278,7 +278,7 @@ if (!$db_error) {
   </nav>
 
   <?php
-  // connection
+  // ISHOWDB TAENAung ano to connection
   if (!empty($db_error)) {
       echo '<div class="notice error" role="alert">' . htmlspecialchars($db_error) . '</div>';
   }

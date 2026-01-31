@@ -236,13 +236,8 @@ if (!isset($_SESSION['Employeenumber'])) {
 <body>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <a class="brand" href="dashboard.php" aria-label="Dashboard">
-<<<<<<< HEAD
       <span class="logo">v</span>
       <span>Veripool</span>
-=======
-      <span class="logo">rm.v</span>
-      <span>Reservation</span>
->>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
     </a>
 
     <div class="search" role="search" aria-label="Employee">
@@ -259,7 +254,7 @@ if (!isset($_SESSION['Employeenumber'])) {
       </a>
       <a class="nav-item active" href="payment_stafff.php" role="menuitem" aria-current="page">
         <i class="fa-solid fa-users"></i>
-        <span>Staff</span>
+        <span>Confirmation</span>
       </a>
       <a class="nav-item" href="calendar.php" role="menuitem">
         <i class="fa-solid fa-calendar-days"></i>
@@ -268,14 +263,10 @@ if (!isset($_SESSION['Employeenumber'])) {
     </div>
 
     <div class="user-area" aria-hidden="false">
-<<<<<<< HEAD
       <button class="btn" type="button" onclick="window.location.href='../Enter_role.php';">Logout</button>
-=======
-      <button class="btn" type="button" onclick="window.location.href='../Enter_role.php';">Enter Role</button>
->>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
-      <div class="avatar" title="Profile">
+      <!-- <div class="avatar" title="Profile">
         <i class="fa-solid fa-user"></i>
-      </div>
+      </div> -->
     </div>
   </nav>
 
@@ -284,7 +275,7 @@ if (!isset($_SESSION['Employeenumber'])) {
       <section class="iframe-panel" aria-label="Payments">
         <div class="iframe-stack">
           <iframe src="addpayment.php" title="Add payment"></iframe>
-          <iframe src="paymentsdashboard.php" title="Payments dashboard"></iframe>
+          <!-- <iframe src="paymentsdashboard.php" title="Payments dashboard"></iframe> -->
         </div>
       </section>
 

@@ -222,13 +222,8 @@ if (!isset($_SESSION['Employeenumber'])) {
 <body>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <a class="brand" href="dashboard.php" aria-label="Dashboard">
-<<<<<<< HEAD
       <span class="logo">v</span>
       <span>Veripool</span>
-=======
-      <span class="logo">rm.v</span>
-      <span>Reservation</span>
->>>>>>> 8dc5fd31c5ccec86e7047c9bff49eada89c3bfce
     </a>
 <!-- search bar just incase HAHHAHHAHA -->
     <!-- <div class="search" role="search" aria-label="Search">
@@ -243,7 +238,7 @@ if (!isset($_SESSION['Employeenumber'])) {
       </a>
       <a class="nav-item" href="payment_stafff.php" role="menuitem">
         <i class="fa-solid fa-users"></i>
-        <span>Staff</span>
+        <span>Confirmation </span>
       </a>
       <a class="nav-item" href="calendar.php" role="menuitem">
         <i class="fa-solid fa-calendar-days"></i>
@@ -259,9 +254,9 @@ if (!isset($_SESSION['Employeenumber'])) {
       <button class="btn" type="button" onclick="window.location.href='../LoginAndregistrationform.php';">Log Out</button>
       <!-- <button class="btn" type="button" onclick="window.location.href='../Enter_role.php';">Enter Role</button> -->
 
-      <div class="avatar" title="Profile">
+      <!-- <div class="avatar" title="Profile">
         <i class="fa-solid fa-user"></i>
-      </div>
+      </div> -->
     </div>
   </nav>
 <!-- for ano to ung ifram burahin monalang if dili mo gusto -->
